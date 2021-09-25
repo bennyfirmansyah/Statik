@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Beranda</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="ion-padding" class="getstart">
+  <ion-row class="filter-search">
+    <img src="assets/imgs/beranda.png"/>
+    <ion-label style="text-align: center;color: #0656C5;font-size: 2rem;font-weight: bolder;"><b>Indikator Strategis Sumatera Barat</b></ion-label>
+    <hr/>
+  </ion-row>
+
+  <!--
+    <span *ngFor="let list of allIndicator" color="dark">
+      <ion-label style="font-size: 1rem;text-align: right;padding-right: 2%;">
+        <div *ngIf="list.count>0;then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock> Menampilkan {{list.total}} Indikator Strategis Provinsi Sumatera Barat</ng-template>
+      </ion-label>
+    </span>
+  -->
+      <ion-grid *ngFor="let pub of listDomain">
+        <ion-card>
+          <!--
+          <ion-row>
+            <ion-col>
+              <p style="text-align: justify;font-size: 1.5rem;font-weight: bolder;color: #434248;">
+                <ion-icon name="arrow-dropright">&nbsp;&nbsp;</ion-icon>{{pub.title}}
+              </p>
+              <p style="text-align: center;font-size: 2rem;font-weight: bolder;color: #0656C5;">{{pub.value}}
+                &nbsp;&nbsp;&nbsp;
+                <span *ngIf="pub.unit == 'Tidak Ada Satuan'"></span>
+                <span *ngIf="pub.unit != 'Tidak Ada Satuan'" style="font-size: 1rem;color: #8D8C91;">({{pub.unit}})</span>
+              </p>
+            </ion-col>
+          </ion-row>
+          -->
+
+          <ion-row>
+            <ion-col col-4 style="background-color: #0656C5;">
+              <p style="text-align: center;font-size: 2rem;font-weight: bolder;color:white;">
+               {{pub.value}}
+              </p>
+            </ion-col>
+            <ion-col col-8>
+              <p style="text-align: left;font-size: 1.6rem;font-weight: bolder;color: #0656C5;">{{pub.title}}
+                <br/>
+                &nbsp;&nbsp;&nbsp;
+                <span *ngIf="pub.unit == 'Tidak Ada Satuan'"></span>
+                <span *ngIf="pub.unit != 'Tidak Ada Satuan'" style="font-size: 1.3rem;color:#800000;"><ion-icon name="arrow-dropright"></ion-icon>&nbsp;({{pub.unit}})</span>
+              </p>             
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-grid>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content loadingSpinner="circles" loadingText=""></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>

@@ -1,0 +1,54 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cari Publikasi</ion-title>
+
+    <!--Adds a close button to the navbar and assigns a click event to trigger the dismiss function to close the modal-->
+    <ion-buttons end><button clear ion-button (click)="dismiss()"><ion-icon name="md-close-circle"></ion-icon></button></ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+ <!--Adds a search bar and an ionInput event to trigger the searchMovies function everytime a user types-->
+  <ion-searchbar placeholder = "Cari Publikasi" [(ngModel)]="keyword" (ionInput)="searchPublikasi($event,keyword)"></ion-searchbar>
+
+      <span *ngFor="let list of allPublication" color="dark">
+        <ion-label style="font-size: 1rem;text-align: right;padding-right: 2%;">
+          <div *ngIf="list.count>0;then thenBlock else elseBlock"></div>
+          <ng-template #thenBlock> Menampilkan {{list.total}} Publikasi</ng-template>
+        </ion-label>
+      </span>
+
+      <ion-grid *ngFor="let pub of listDomain">
+        <ion-card (click)="launchPubDetailsPage(pub)">
+          <ion-row>
+            <ion-col size="1">
+              <ion-item>
+                <ion-thumbnail>
+                  <ion-img [src]="pub.cover"></ion-img>
+                </ion-thumbnail>
+              </ion-item>
+            </ion-col>
+            <ion-col size="11" style="font-weight: bold;">
+              <ion-label color="danger" style="font-size: 1.1rem;">{{ showTanggalIndonesia(pub.rl_date) }}</ion-label>
+              {{pub.title}}
+              <ion-label color="secondary" style="font-size: 1.1rem;">{{pub.size}}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-grid>
+ 
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content loadingSpinner="circles" loadingText=""></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+  </ion-content>

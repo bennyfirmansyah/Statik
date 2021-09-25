@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detil BRS</ion-title>
+      <ion-buttons end><button ion-button (click)="dismiss()">
+        <ion-icon clear name="md-close-circle"></ion-icon>
+      </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-card>
+      <ion-row>
+          <ion-col style="padding: 5%;text-align: justify;background-color:#044197;color: white;">
+            <span style="font-size: 1.8rem;"> <ion-icon name="megaphone"></ion-icon>&nbsp;&nbsp;{{allPublication1.title}}</span>
+          </ion-col>
+      </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-row>
+      <ion-col>    
+        <ul style="padding:0;list-style: none;">    
+          <span style="color:#E81941;">
+          <li style="font-size: 1.5rem;"><ion-icon name="calendar"></ion-icon>&nbsp;&nbsp;Tanggal Rilis : {{allPublication1.rl_date}}</li> 
+          <li style="font-size: 1.5rem;"> <ion-icon name="attach"></ion-icon>&nbsp;&nbsp;Size : {{allPublication1.size}}</li>
+          </span>
+        </ul>      
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-row>
+      <ion-col size="2" style="text-align: center;background-color:#044197;">
+      <a target="_blank" style="text-decoration: none;text-align: center;color: white;font-size: 1.3rem;" href="{{allPublication1.pdf}}">
+        <ion-label><ion-icon name="download"></ion-icon>&nbsp;&nbsp;Unduh BRS</ion-label>
+      </a>    
+    </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <!--
+  <ion-row>
+      <ion-col>
+        <p style="font-size: 1.6rem;font-weight: bold;"><ion-icon name="exit"></ion-icon>&nbsp;&nbsp;Abstrak</p>
+        <div style="font-size: 1.4rem;text-align: justify;" [innerHTML]="allPublication1.abstract"></div>  
+      </ion-col>
+  </ion-row>
+  -->
+  </ion-grid>
+
+</ion-content>
+

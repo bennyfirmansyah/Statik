@@ -1,0 +1,24 @@
+page-beranda {
+  .ion-padding{
+    ion-loading.transparent {
+      .loading-wrapper {
+        background: transparent;
+        box-shadow: none;
+        .spinner-crescent circle {
+          stroke-width: 8px;
+          stroke: black;
+        }
+      }
+    }
+  }
+
+  .filter-search{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background-color: white;
+  }
+
+}

@@ -1,0 +1,36 @@
+page-publikasi {
+    .ion-padding{
+        ion-col{
+            font-size: 1.5rem;
+        }
+        .item ion-thumbnail ion-img,
+        .item ion-thumbnail img {
+            max-width: 6rem;    
+            min-height: 8rem;
+            object-fit: cover;
+            display: block;
+            margin:0 auto;
+        }
+    }
+
+    .filter-search{
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background-color: white;
+    }
+}
+
+ion-loading.transparent {
+    .loading-wrapper {
+      background: transparent;
+      box-shadow: none;
+      .spinner-crescent circle {
+        stroke-width: 8px;
+        stroke: black;
+      }
+    }
+}
+

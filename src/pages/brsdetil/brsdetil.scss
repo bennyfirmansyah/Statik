@@ -1,0 +1,23 @@
+page-brsdetil {
+    .ion-padding{
+        ion-col{
+            font-size: 1.3rem;
+        }
+        .item ion-thumbnail ion-img,
+        .item ion-thumbnail img {
+            max-width: 6rem;    
+            min-height: 8rem;
+            object-fit: cover;
+            display: block;
+            margin:0 auto;
+        }
+        ion-list {
+            min-height: 0.5rem;
+        }
+        
+        label {
+           padding: 0px;
+           margin : 0px;
+         }
+    }
+}
